@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: center;
+    .logo {
+        margin: 2rem 0 0 0;
+        a {
+           img{
+              width:8rem;
+           }
+           &:hover{
+              opacity:.9;
+           }
+        }
+     }
+}
