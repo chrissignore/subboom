@@ -10,7 +10,6 @@
 // SCSS SINGLE PAGE IMPORTS //
 @import 
 '../style-sheets/other-pages/signup',
-'../style-sheets/other-pages/ad-post',
 'legal/legal', 
 'legal/privacy',
 'legal/cookies';
@@ -63,7 +62,7 @@
 
        .left__content{
            h1{
-                 margin-top:2.5rem;
+                 margin-top:.25rem;
                  width:20rem;
               }
               p{
@@ -553,7 +552,7 @@ and (max-width:43.75rem){
   display: grid;
   width:85.25rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr .5fr;
   gap: 2.075rem;
   .box{
      border-radius: .95rem;
@@ -578,14 +577,106 @@ and (max-width:43.75rem){
          width:18.5rem;
       }
  }
-.box{
+
+  .box{
+     background:#EEEFF2;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: .95rem;
+        .left__content{
+        margin-top:-1.5rem;
+           img{
+              border-radius:1rem;
+              width:12.5rem;
+           }
+        }
+        .right__content{
+           margin:0 -2.5rem 0 2.5rem;
+           h1{
+              margin:0;
+              width:25rem;
+           }
+        }
+  }
+  .box:nth-child(2){
+     background:#E7EAFF;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+        .cards__content{
+           margin-top:3.25rem;
+           display: flex;
+           flex-wrap: wrap;
+           flex: 50rem 0;
+           justify-content: center;
+           max-width:40rem; // sets the entire grid width **** 
+           a{
+            margin: 0rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+              .center__content{
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               text-align: center;
+               align-items: center;
+               width:10rem;
+               border:3px solid $black;
+               border-radius: 1rem;
+               background:#EEEFF2; // inside card
+               h3{
+                  font-size:1.25rem;
+                  padding:.4rem 0;
+               }
+              }
+               img{
+                  margin-top: 1rem;
+                  width:7rem;
+               }
+              &:hover{
+               animation: wiggle 1.25s cubic-bezier(.36,.07,.19,.97) both infinite;
+               transform: translate3d(0, 0, 0);
+               backface-visibility: hidden;
+               perspective: 100%;
+                  .center__content{
+                     box-shadow: 0px 0px 18px -3px rgba(0,0,0,0.3);
+                  }
+               @keyframes wiggle {
+                     0% {transform:rotate(3deg);}
+                     50% {transform:rotate(-3deg);}
+                     100% {transform:rotate(3deg);}
+                  }
+        
+            }
+       }
+       a:nth-child(2){
+         img{
+            margin-top: .85rem;
+            width:9rem;
+         }
+       }
+       a:nth-child(4){
+         img{
+            width:8rem;
+         }
+       }
+       a:nth-child(3),
+       a:nth-child(4){
+         margin-top:.5rem;
+       }
+
+      }
+}
+.box:nth-child(3){
   background:#F3F4F6;
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 2;
      .center__content{
-        padding: 5rem 0;
+        padding-top: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -881,8 +972,8 @@ and (min-width:43.75rem){
   }
   }    
 }
-   @media only screen
-   and (max-width:43.75rem){
+@media only screen
+and (max-width:43.75rem){
 .styles__GridContainer-2{
   .pages__grid{
      gap: 1.5rem;
